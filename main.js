@@ -72,7 +72,7 @@ function allowDrawing() {
     document.getElementById('status').innerHTML = 'Model Loaded';
     //else
     //    document.getElementById('status').innerHTML = 'تم التحميل';
-    $('button').prop('disabled', false);
+    //$('button').prop('disabled', false);
     var slider = document.getElementById('myRange');
     slider.oninput = function() {
         canvas.freeDrawingBrush.width = this.value;
