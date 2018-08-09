@@ -1,0 +1,40 @@
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Hand Written Digits Reconginizer</title>
+<!-- TensorFlow.js script -->
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"> </script>
+<script src = "main.js" ></script> 
+</head>
+<body>
+<nav class="navbar navbar-expand-sm bg-light navbar-light">
+  <!-- Brand/logo -->
+  <a class="navbar-brand" href="#"><h1>Digit Recognizer</h1></a>
+  </nav>
+<div class="container-fluid"> 
+
+<blockquote class="blockquote text-justify" style="margin:30px;">
+ <p> This is a simple tool that uses CNN to recognize drawings. 
+ The CNN was trained to recognize hand written digits. It achieves 99% accuracy </p>
+    <footer class="blockquote-footer">Saranya</footer>
+  </blockquote>
+</div>
+<div class="row">
+  <div class="col" style ='margin-left:100px;'>
+<h4 id ='status' >Loading Model... </h4>	  
+<canvas id="canvas" width="300" height="300" class="canvas" style="border:1px solid #b9bfc9;margin-top:25px;"></canvas>
+<div class="btn-group" style = 'margin-top:40px; '>
+<input type="range" min="5" max="20" value="10" class="slider" id="myRange" style ='margin-top:20px;'>
+<button type="button" class="btn btn-outline-primary" onclick ='erase()' style ='margin-left:10px;' disabled>Clear</button>
+    </div>   
+</div>
+<div>
+<p id = "Result"></p>
+<p id = "Probability"></p>
+</div>
+</body>
+<script>
+	console.log('starting');
+	start('en')
+</script>
+</html>
