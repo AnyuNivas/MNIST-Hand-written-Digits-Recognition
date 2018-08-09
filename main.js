@@ -61,7 +61,7 @@ async function start(cur_mode) {
     allowDrawing()
     
     //load the class names
-    await loadDict()
+    //await loadDict()
 }
 /*
 allow drawing on canvas
