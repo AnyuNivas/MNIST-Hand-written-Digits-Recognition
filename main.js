@@ -56,8 +56,6 @@ async function start(cur_mode) {
     //load the model 
     model = await tf.loadModel('model3/model.json')
     
-    //warm up 
-    model.predict(tf.zeros([1, 28, 28, 1]))
     
     //allow drawing on the canvas 
     allowDrawing()
