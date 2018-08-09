@@ -11,6 +11,30 @@ var mode;
 /*
 get the current image data 
 */
+
+/*
+prepare the drawing canvas 
+*/
+$(function() {
+    canvas = window._canvas = new fabric.Canvas('canvas');
+    canvas.backgroundColor = '#ffffff';
+    canvas.isDrawingMode = 0;
+    canvas.freeDrawingBrush.color = "black";
+    canvas.freeDrawingBrush.width = 10;
+    canvas.renderAll();
+    //setup listeners 
+    canvas.on('mouse:up', function(e) {
+        getFrame();
+        mousePressed = false
+    });
+    canvas.on('mouse:down', function(e) {
+        mousePressed = true
+    });
+    canvas.on('mouse:move', function(e) {
+        recordCoor(e)
+    });
+})
+
 function getImageData() {
         //get the minimum bounding box around the drawing 
         const mbb = getMinBox()
@@ -67,7 +91,7 @@ async function start(cur_mode) {
 allow drawing on canvas
 */
 function allowDrawing() {
-    //canvas.isDrawingMode = 1;
+    canvas.isDrawingMode = 1;
     //if (mode == 'en')
     document.getElementById('status').innerHTML = 'Model Loaded';
     //else
